@@ -357,7 +357,7 @@ Building amenities include a fitness center, rooftop pool, 24-hour concierge ser
                             </div>
 
                             {/* Agent Contact Card */}
-                            <div className="card p-6">
+                            <div className="card p-6 border border-[#E2E8F0]">
                                 <div className="flex items-center space-x-4 mb-4">
                                     <Image
                                         src={property.agent.avatar}

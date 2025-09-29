@@ -81,8 +81,8 @@ const PropertyCard = ({
         return (
             <Link
                 to={`/property-details?id=${property?.id}`}
-                className={`block card hover:shadow-elevation-2 transition-all duration-200 ease-out
-                   ${isHighlighted ? 'ring-2 ring-primary shadow-elevation-2' : ''}`}
+                className={`block card border border-[#E2E8F0] hover:shadow-lg transition-all duration-200 ease-out
+                   ${isHighlighted ? 'ring-2 ring-[#2563EB] shadow-lg' : ''}`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
@@ -102,16 +102,16 @@ const PropertyCard = ({
                                     <button
                                         onClick={(e) => handleImageNavigation('prev', e)}
                                         className="absolute left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 
-                             bg-surface/90 rounded-full flex items-center justify-center
-                             hover:bg-surface transition-all duration-200"
+                             bg-white/90 rounded-full flex items-center justify-center
+                             hover:bg-white transition-all duration-200"
                                     >
                                         <Icon name="ChevronLeft" size={14} />
                                     </button>
                                     <button
                                         onClick={(e) => handleImageNavigation('next', e)}
                                         className="absolute right-2 top-1/2 transform -translate-y-1/2 w-6 h-6 
-                             bg-surface/90 rounded-full flex items-center justify-center
-                             hover:bg-surface transition-all duration-200"
+                             bg-white/90 rounded-full flex items-center justify-center
+                             hover:bg-white transition-all duration-200"
                                     >
                                         <Icon name="ChevronRight" size={14} />
                                     </button>
@@ -137,7 +137,7 @@ const PropertyCard = ({
                                 onClick={handleSave}
                                 className={`absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center
                            transition-all duration-200 ease-out ${property?.isSaved
-                                        ? 'bg-error text-white' : 'bg-surface/90 text-text-secondary hover:bg-surface hover:text-error'
+                                        ? 'bg-[#DC2626] text-white' : 'bg-white/90 text-text-secondary hover:bg-white hover:text-[#DC2626]'
                                     }`}
                             >
                                 <Icon
@@ -155,13 +155,13 @@ const PropertyCard = ({
                                     <h3 className="text-lg font-semibold text-text-primary truncate">
                                         {property?.title}
                                     </h3>
-                                    <p className="text-2xl font-bold text-primary">
+                                    <p className="text-2xl font-bold text-[#2563EB]">
                                         {formatPrice(property?.price)}
                                     </p>
                                 </div>
 
                                 {property?.daysOnMarket <= 7 && (
-                                    <span className="bg-success-100 text-success px-2 py-1 rounded-md text-xs font-medium">
+                                    <span className="bg-[#D1FAE5] text-[#059669] px-2 py-1 rounded-md text-xs font-medium">
                                         New
                                     </span>
                                 )}
@@ -204,11 +204,11 @@ const PropertyCard = ({
                                     <div className="flex items-center space-x-2">
                                         <button
                                             onClick={handleContactAgent}
-                                            className="px-3 py-1.5 bg-accent-100 text-accent-600 rounded-md text-sm font-medium hover:bg-accent-500 hover:text-white transition-all duration-200 ease-out"
+                                            className="px-3 py-1.5 bg-accent-100 text-accent-600 rounded-md text-sm font-medium hover:bg-[#0EA5E9] hover:text-white transition-all duration-200 ease-out"
                                         >
                                             Contact
                                         </button>
-                                        <button className="px-3 py-1.5 bg-primary text-white rounded-md text-sm font-medium hover:bg-primary-700 transition-all duration-200 ease-out">
+                                        <button className="px-3 py-1.5 bg-primary text-white rounded-md text-sm font-medium hover:bg-[#1D4ED8] transition-all duration-200 ease-out">
                                             Tour
                                         </button>
                                     </div>
@@ -225,7 +225,7 @@ const PropertyCard = ({
     return (
         <Link
             to={`/property-details?id=${property?.id}`}
-            className="block card hover:shadow-elevation-2 transition-all duration-200 ease-out micro-interaction"
+            className="block card hover:shadow-lg transition-all duration-200 ease-out micro-interaction"
         >
             {/* Property Images */}
             <div className="relative h-48 overflow-hidden rounded-t-lg">
@@ -241,16 +241,16 @@ const PropertyCard = ({
                         <button
                             onClick={(e) => handleImageNavigation('prev', e)}
                             className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 
-                       bg-surface/90 rounded-full flex items-center justify-center
-                       hover:bg-surface transition-all duration-200"
+                       bg-white/90 rounded-full flex items-center justify-center
+                       hover:bg-white transition-all duration-200"
                         >
                             <Icon name="ChevronLeft" size={16} />
                         </button>
                         <button
                             onClick={(e) => handleImageNavigation('next', e)}
                             className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 
-                       bg-surface/90 rounded-full flex items-center justify-center
-                       hover:bg-surface transition-all duration-200"
+                       bg-white/90 rounded-full flex items-center justify-center
+                       hover:bg-white transition-all duration-200"
                         >
                             <Icon name="ChevronRight" size={16} />
                         </button>
@@ -276,7 +276,7 @@ const PropertyCard = ({
                     onClick={handleSave}
                     className={`absolute top-3 right-3 w-10 h-10 rounded-full flex items-center justify-center
                      transition-all duration-200 ease-out ${property?.isSaved
-                            ? 'bg-error text-white' : 'bg-surface/90 text-text-secondary hover:bg-surface hover:text-error'
+                            ? 'bg-[#DC2626] text-white' : 'bg-white/90 text-text-secondary hover:bg-white hover:text-[#DC2626]'
                         }`}
                 >
                     <Icon
@@ -348,11 +348,11 @@ const PropertyCard = ({
                     <div className="flex items-center space-x-2">
                         <button
                             onClick={handleContactAgent}
-                            className="p-2 bg-accent-100 text-accent-600 rounded-md hover:bg-accent-500 hover:text-white transition-all duration-200 ease-out"
+                            className="p-2 bg-[#E0F2FE] text-[#0284C7] rounded-md hover:bg-[#0EA5E9] hover:text-white transition-all duration-200 ease-out"
                         >
                             <Icon name="Phone" size={16} />
                         </button>
-                        <button className="p-2 bg-primary text-white rounded-md hover:bg-primary-700 transition-all duration-200 ease-out">
+                        <button className="p-2 bg-[#2563EB] text-white rounded-md hover:bg-[#1D4ED8] transition-all duration-200 ease-out">
                             <Icon name="Calendar" size={16} />
                         </button>
                     </div>

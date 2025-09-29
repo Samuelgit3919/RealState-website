@@ -125,14 +125,14 @@ const FilterPanel = ({
 
             {/* Filter Panel */}
             <div className={`
-        fixed lg:relative top-0 left-0 h-full w-80 bg-surface border-r border-border z-modal
+        fixed lg:relative top-0 left-0 h-full w-80 bg-white border-r border-[#E2E8F0] z-modal
         transform transition-transform duration-300 ease-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         ${isOpen ? 'lg:block' : 'lg:hidden'}
       `}>
                 <div className="h-full flex flex-col">
                     {/* Header */}
-                    <div className="flex items-center justify-between p-4 border-b border-border">
+                    <div className="flex items-center justify-between p-4 border-b border-[#E2E8F0]">
                         <h2 className="text-lg font-semibold text-text-primary">Filters</h2>
                         <div className="flex items-center space-x-2">
                             {hasActiveFilters && (
@@ -169,8 +169,8 @@ const FilterPanel = ({
                                         value={filters.query}
                                         onChange={(e) => handleFilterChange('query', e.target.value)}
                                         placeholder="Search properties..."
-                                        className="block w-full pl-10 pr-3 py-2 border border-border rounded-md
-                             focus:border-border-focus focus:ring-1 focus:ring-primary-500
+                                        className="block w-full pl-10 pr-3 py-2 border border-[#E2E8F0] rounded-md
+                             focus:border-[#E2E8F0]-focus focus:ring-1 focus:ring-[#3B82F6]
                              transition-all duration-200 ease-out text-sm"
                                     />
                                 </div>
@@ -190,8 +190,8 @@ const FilterPanel = ({
                                         value={filters.location}
                                         onChange={(e) => handleFilterChange('location', e.target.value)}
                                         placeholder="City, neighborhood, or ZIP"
-                                        className="block w-full pl-10 pr-3 py-2 border border-border rounded-md
-                             focus:border-border-focus focus:ring-1 focus:ring-primary-500
+                                        className="block w-full pl-10 pr-3 py-2 border border-[#E2E8F0] rounded-md
+                             focus:border-[#E2E8F0]-focus focus:ring-1 focus:ring-[#3B82F6]
                              transition-all duration-200 ease-out text-sm"
                                     />
                                 </div>
@@ -222,7 +222,7 @@ const FilterPanel = ({
                                                     value={type.value}
                                                     checked={filters.propertyType === type.value}
                                                     onChange={(e) => handleFilterChange('propertyType', e.target.value)}
-                                                    className="w-4 h-4 text-primary border-border focus:ring-primary-500"
+                                                    className="w-4 h-4 text-[#2563EB] border-[#E2E8F0] focus:ring-[#3B82F6]"
                                                 />
                                                 <span className="ml-2 text-sm text-text-secondary">{type.label}</span>
                                             </label>
@@ -255,7 +255,7 @@ const FilterPanel = ({
                                                     key={index}
                                                     onClick={() => handlePriceRangeSelect(range)}
                                                     className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors duration-200 ${filters.minPrice === range.min && filters.maxPrice === range.max
-                                                        ? 'bg-primary-100 text-primary border border-primary-500' : 'text-text-secondary hover:bg-secondary-100'
+                                                        ? 'bg-[#DBEAFE] text-[#2563EB] border border-[#3B82F6]' : 'text-text-secondary hover:bg-[#F1F5F9]'
                                                         }`}
                                                 >
                                                     {range.label}
@@ -264,7 +264,7 @@ const FilterPanel = ({
                                         </div>
 
                                         {/* Custom Price Range */}
-                                        <div className="pt-3 border-t border-border">
+                                        <div className="pt-3 border-t border-[#E2E8F0]">
                                             <div className="grid grid-cols-2 gap-2">
                                                 <div>
                                                     <label className="block text-xs text-text-secondary mb-1">Min Price</label>
@@ -273,8 +273,8 @@ const FilterPanel = ({
                                                         value={filters.minPrice}
                                                         onChange={(e) => handleFilterChange('minPrice', e.target.value)}
                                                         placeholder="$0"
-                                                        className="w-full px-3 py-2 border border-border rounded-md text-sm
-                                     focus:border-border-focus focus:ring-1 focus:ring-primary-500"
+                                                        className="w-full px-3 py-2 border border-[#E2E8F0] rounded-md text-sm
+                                     focus:border-[#E2E8F0]-focus focus:ring-1 focus:ring-[#3B82F6]"
                                                     />
                                                 </div>
                                                 <div>
@@ -284,8 +284,8 @@ const FilterPanel = ({
                                                         value={filters.maxPrice}
                                                         onChange={(e) => handleFilterChange('maxPrice', e.target.value)}
                                                         placeholder="Any"
-                                                        className="w-full px-3 py-2 border border-border rounded-md text-sm
-                                     focus:border-border-focus focus:ring-1 focus:ring-primary-500"
+                                                        className="w-full px-3 py-2 border border-[#E2E8F0] rounded-md text-sm
+                                     focus:border-[#E2E8F0]-focus focus:ring-1 focus:ring-[#3B82F6]"
                                                     />
                                                 </div>
                                             </div>
@@ -319,7 +319,7 @@ const FilterPanel = ({
                                                         key={bed}
                                                         onClick={() => handleFilterChange('bedrooms', bed)}
                                                         className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${filters.bedrooms === bed
-                                                            ? 'bg-primary text-white' : 'bg-secondary-100 text-text-secondary hover:bg-secondary-200'
+                                                            ? 'bg-[#2563EB] text-white' : 'bg-[#F1F5F9]text-text-secondary hover:bg-secondary-200'
                                                             }`}
                                                     >
                                                         {bed || 'Any'}
@@ -336,7 +336,7 @@ const FilterPanel = ({
                                                         key={bath}
                                                         onClick={() => handleFilterChange('bathrooms', bath)}
                                                         className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${filters.bathrooms === bath
-                                                            ? 'bg-primary text-white' : 'bg-secondary-100 text-text-secondary hover:bg-secondary-200'
+                                                            ? 'bg-[#2563EB] text-white' : 'bg-[#F1F5F9]text-text-secondary hover:bg-[#E2E8F0]'
                                                             }`}
                                                     >
                                                         {bath || 'Any'}
@@ -373,8 +373,8 @@ const FilterPanel = ({
                                                     value={filters.minSqft}
                                                     onChange={(e) => handleFilterChange('minSqft', e.target.value)}
                                                     placeholder="Any"
-                                                    className="w-full px-3 py-2 border border-border rounded-md text-sm
-                                   focus:border-border-focus focus:ring-1 focus:ring-primary-500"
+                                                    className="w-full px-3 py-2 border border-[#E2E8F0] rounded-md text-sm
+                                   focus:border-[#E2E8F0]-focus focus:ring-1 focus:ring-[#3B82F6]"
                                                 />
                                             </div>
                                             <div>
@@ -384,8 +384,8 @@ const FilterPanel = ({
                                                     value={filters.maxSqft}
                                                     onChange={(e) => handleFilterChange('maxSqft', e.target.value)}
                                                     placeholder="Any"
-                                                    className="w-full px-3 py-2 border border-border rounded-md text-sm
-                                   focus:border-border-focus focus:ring-1 focus:ring-primary-500"
+                                                    className="w-full px-3 py-2 border border-[#E2E8F0] rounded-md text-sm
+                                   focus:border-[#E2E8F0]-focus focus:ring-1 focus:ring-[#3B82F6]"
                                                 />
                                             </div>
                                         </div>
@@ -416,7 +416,7 @@ const FilterPanel = ({
                                                     type="checkbox"
                                                     checked={filters.amenities.includes(amenity)}
                                                     onChange={() => handleAmenityToggle(amenity)}
-                                                    className="w-4 h-4 text-primary border-border rounded focus:ring-primary-500"
+                                                    className="w-4 h-4 text-[#2563EB] border-[#E2E8F0] rounded focus:ring-[#3B82F6]"
                                                 />
                                                 <span className="ml-2 text-sm text-text-secondary">{amenity}</span>
                                             </label>

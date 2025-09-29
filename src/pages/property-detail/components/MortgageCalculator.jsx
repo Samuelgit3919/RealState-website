@@ -78,9 +78,9 @@ const MortgageCalculator = ({ propertyPrice }) => {
     const downPaymentPercentage = ((downPayment / propertyPrice) * 100).toFixed(1);
 
     return (
-        <div className="card p-6">
+        <div className="card p-6 border border-[#E2E8F0] shadow-md ">
             <div className="flex items-center space-x-2 mb-6">
-                <Icon name="Calculator" size={20} className="text-primary" />
+                <Icon name="Calculator" size={20} className="text-[#2563EB]" />
                 <h2 className="text-lg font-semibold text-text-primary">Mortgage Calculator</h2>
             </div>
 
@@ -96,7 +96,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                             type="text"
                             value={formatNumber(propertyPrice)}
                             readOnly
-                            className="w-full pl-8 pr-3 py-2 border border-border rounded-md bg-secondary-100 text-text-secondary cursor-not-allowed"
+                            className="w-full pl-8 pr-3 py-2 border border-[#E2E8F0] rounded-md bg-[#F1F5F9] text-text-secondary cursor-not-allowed"
                         />
                     </div>
                 </div>
@@ -112,7 +112,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                             type="number"
                             value={downPayment}
                             onChange={(e) => setDownPayment(Number(e.target.value))}
-                            className="w-full pl-8 pr-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200"
+                            className="w-full pl-8 pr-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200"
                         />
                     </div>
                     <div className="flex space-x-2">
@@ -121,7 +121,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                                 key={percentage}
                                 onClick={() => handleDownPaymentPercentageChange(percentage)}
                                 className={`px-3 py-1 text-xs rounded-md transition-all duration-200 ${Math.abs(Number(downPaymentPercentage) - percentage) < 0.1
-                                    ? 'bg-primary text-white' : 'bg-secondary-100 text-text-secondary hover:bg-secondary-200'
+                                    ? 'bg-primary text-white' : 'bg-[#F1F5F9] text-text-secondary hover:bg-[#E2E8F0]'
                                     }`}
                             >
                                 {percentage}%
@@ -141,7 +141,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                             type="number"
                             value={loanAmount}
                             onChange={(e) => setLoanAmount(Number(e.target.value))}
-                            className="w-full pl-8 pr-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200"
+                            className="w-full pl-8 pr-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200"
                         />
                     </div>
                 </div>
@@ -157,7 +157,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                             step="0.1"
                             value={interestRate}
                             onChange={(e) => setInterestRate(Number(e.target.value))}
-                            className="w-full pr-8 pl-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200"
+                            className="w-full pr-8 pl-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary">%</span>
                     </div>
@@ -174,7 +174,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                                 key={term}
                                 onClick={() => setLoanTerm(term)}
                                 className={`flex-1 py-2 text-sm rounded-md transition-all duration-200 ${loanTerm === term
-                                    ? 'bg-primary text-white' : 'bg-secondary-100 text-text-secondary hover:bg-secondary-200'
+                                    ? 'bg-primary text-white' : 'bg-[#F1F5F9] text-text-secondary hover:bg-[#E2E8F0]'
                                     }`}
                             >
                                 {term} years
@@ -185,7 +185,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                         type="number"
                         value={loanTerm}
                         onChange={(e) => setLoanTerm(Number(e.target.value))}
-                        className="w-full px-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200"
+                        className="w-full px-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200"
                         placeholder="Custom term (years)"
                     />
                 </div>
@@ -204,7 +204,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                                 type="number"
                                 value={propertyTax}
                                 onChange={(e) => setPropertyTax(Number(e.target.value))}
-                                className="w-full pl-8 pr-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200 text-sm"
+                                className="w-full pl-8 pr-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200 text-sm"
                             />
                         </div>
                     </div>
@@ -219,7 +219,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                                 type="number"
                                 value={insurance}
                                 onChange={(e) => setInsurance(Number(e.target.value))}
-                                className="w-full pl-8 pr-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200 text-sm"
+                                className="w-full pl-8 pr-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200 text-sm"
                             />
                         </div>
                     </div>
@@ -235,7 +235,7 @@ const MortgageCalculator = ({ propertyPrice }) => {
                                     type="number"
                                     value={pmi}
                                     onChange={(e) => setPmi(Number(e.target.value))}
-                                    className="w-full pl-8 pr-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200 text-sm"
+                                    className="w-full pl-8 pr-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200 text-sm"
                                 />
                             </div>
                             <p className="text-xs text-text-secondary mt-1">
@@ -254,14 +254,14 @@ const MortgageCalculator = ({ propertyPrice }) => {
                                 type="number"
                                 value={hoaFees}
                                 onChange={(e) => setHoaFees(Number(e.target.value))}
-                                className="w-full pl-8 pr-3 py-2 border border-border rounded-md focus:border-primary focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200 text-sm"
+                                className="w-full pl-8 pr-3 py-2 border border-[#E2E8F0] rounded-md focus:border-[#2563EB] focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-200 text-sm"
                             />
                         </div>
                     </div>
                 </div>
 
                 {/* Payment Breakdown */}
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t border-[#E2E8F0]">
                     <h3 className="text-sm font-semibold text-text-primary mb-4">Monthly Payment Breakdown</h3>
 
                     <div className="space-y-2 text-sm">
@@ -299,14 +299,14 @@ const MortgageCalculator = ({ propertyPrice }) => {
                         )}
                     </div>
 
-                    <div className="flex justify-between pt-3 mt-3 border-t border-border">
+                    <div className="flex justify-between pt-3 mt-3 border-t border-[#E2E8F0]">
                         <span className="font-semibold text-text-primary">Total Monthly Payment:</span>
-                        <span className="text-xl font-bold text-primary">{formatCurrency(totalMonthlyPayment)}</span>
+                        <span className="text-xl font-bold text-[#2563EB]">{formatCurrency(totalMonthlyPayment)}</span>
                     </div>
                 </div>
 
                 {/* Disclaimer */}
-                <div className="text-xs text-text-secondary bg-secondary-100 p-3 rounded-md">
+                <div className="text-xs text-text-secondary bg-[#F1F5F9] p-3 rounded-md">
                     <Icon name="Info" size={14} className="inline mr-1" />
                     This calculator provides estimates only. Actual payments may vary based on lender terms, fees, and other factors.
                 </div>

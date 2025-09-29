@@ -74,7 +74,7 @@ const SimilarProperties = ({ properties = [] }) => {
     if (!properties?.length) {
         return (
             <div className="text-center py-12">
-                <Icon name="Home" size={48} className="text-secondary mx-auto mb-4" />
+                <Icon name="Home" size={48} className="text-[#64748B] mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-text-primary mb-2">
                     No Similar Properties
                 </h3>
@@ -99,14 +99,14 @@ const SimilarProperties = ({ properties = [] }) => {
                     <div className="hidden md:flex items-center space-x-2">
                         <button
                             onClick={handlePrevious}
-                            className="p-2 border border-border rounded-md hover:bg-secondary-100 transition-all duration-200"
+                            className="p-2 border border-[#E2E8F0] rounded-md hover:bg-[#F1F5F9] transition-all duration-200"
                             aria-label="Previous properties"
                         >
                             <Icon name="ChevronLeft" size={20} />
                         </button>
                         <button
                             onClick={handleNext}
-                            className="p-2 border border-border rounded-md hover:bg-secondary-100 transition-all duration-200"
+                            className="p-2 border border-[#E2E8F0] rounded-md hover:bg-[#F1F5F9] transition-all duration-200"
                             aria-label="Next properties"
                         >
                             <Icon name="ChevronRight" size={20} />
@@ -128,10 +128,10 @@ const SimilarProperties = ({ properties = [] }) => {
                             <Link
                                 key={property?.id}
                                 to={`/property-details?id=${property?.id}`}
-                                className="flex-shrink-0 w-80 md:w-96 group"
+                                className="flex-shrink-0  w-80 md:w-96 group"
                                 style={{ scrollSnapAlign: 'start' }}
                             >
-                                <div className="card hover:shadow-elevation-3 transition-all duration-200 overflow-hidden">
+                                <div className="card border border-[#E2E8F0] shadow-md hover:shadow-elevation-3 transition-all duration-200 overflow-hidden">
                                     {/* Property Image */}
                                     <div className="relative h-48 overflow-hidden">
                                         <Image
@@ -148,7 +148,7 @@ const SimilarProperties = ({ properties = [] }) => {
                                                     e.stopPropagation();
                                                     // Handle save action
                                                 }}
-                                                className="p-2 bg-surface/90 rounded-full hover:bg-surface transition-all duration-200"
+                                                className="p-2 bg-[#FFFFFF]/90 rounded-full hover:bg-[#FFFFFF] transition-all duration-200"
                                                 aria-label="Save property"
                                             >
                                                 <Icon name="Heart" size={16} />
@@ -159,10 +159,10 @@ const SimilarProperties = ({ properties = [] }) => {
                                     {/* Property Details */}
                                     <div className="p-4">
                                         <div className="mb-2">
-                                            <h3 className="font-semibold text-text-primary group-hover:text-primary transition-colors duration-200 line-clamp-1">
+                                            <h3 className="font-semibold text-text-primary group-hover:text-[#2563EB] transition-colors duration-200 line-clamp-1">
                                                 {property?.title}
                                             </h3>
-                                            <p className="text-xl font-bold text-primary">
+                                            <p className="text-xl font-bold text-[#2563EB]">
                                                 {formatPrice(property?.price)}
                                             </p>
                                         </div>
@@ -200,7 +200,7 @@ const SimilarProperties = ({ properties = [] }) => {
                             <button
                                 key={index}
                                 onClick={() => scrollToIndex(index)}
-                                className={`w-2 h-2 rounded-full transition-all duration-200 ${index === currentIndex ? 'bg-primary' : 'bg-secondary-300'
+                                className={`w-2 h-2 rounded-full transition-all duration-200 ${index === currentIndex ? 'bg-[#2563EB]' : 'bg-[#CBD5E1]'
                                     }`}
                                 aria-label={`Go to property ${index + 1}`}
                             />
@@ -213,7 +213,7 @@ const SimilarProperties = ({ properties = [] }) => {
             <div className="text-center pt-4">
                 <Link
                     to="/property-listings"
-                    className="inline-flex items-center space-x-2 text-primary hover:text-primary-700 font-medium transition-colors duration-200"
+                    className="inline-flex items-center space-x-2 text-[#2563EB] hover:text-[#1D4ED8] font-medium transition-colors duration-200"
                 >
                     <span>View All Properties</span>
                     <Icon name="ArrowRight" size={16} />

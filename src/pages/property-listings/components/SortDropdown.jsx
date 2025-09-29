@@ -46,12 +46,12 @@ const SortDropdown = ({ value, onChange }) => {
     const selectedOption = sortOptions.find(option => option.value === value) || sortOptions[0];
 
     return (
-        <div className="relative" ref={dropdownRef}>
+        <div className="relative z-999" ref={dropdownRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center space-x-2 px-4 py-2 bg-surface border border-border 
+                className="flex items-center space-x-2 px-4 py-2  bg-white border border-[#E2E8F0] 
                  rounded-md text-sm font-medium text-text-primary
-                 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 
+                 hover:bg-[#F1F5F9] focus:outline-none focus:ring-2 focus:ring-[#3B82F6] 
                  focus:ring-offset-2 transition-all duration-200 ease-out"
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -67,8 +67,8 @@ const SortDropdown = ({ value, onChange }) => {
             </button>
 
             {isOpen && (
-                <div className="absolute top-full mt-1 right-0 w-56 bg-surface rounded-md 
-                      shadow-elevation-3 border border-border z-dropdown">
+                <div className="absolute top-full mt-1 right-0 w-56 bg-white rounded-md 
+                      shadow-elevation-3 border border-[#E2E8F0] z-dropdown">
                     <div className="py-1">
                         {sortOptions.map((option) => (
                             <button
@@ -76,17 +76,17 @@ const SortDropdown = ({ value, onChange }) => {
                                 onClick={() => handleSelect(option.value)}
                                 className={`w-full flex items-center space-x-3 px-4 py-2 text-sm text-left
                            transition-colors duration-200 ${option.value === value
-                                        ? 'bg-primary-100 text-primary' : 'text-text-secondary hover:text-text-primary hover:bg-secondary-100'
+                                        ? 'bg-[#DBEAFE] text-[#2563EB]' : 'text-text-secondary hover:text-text-primary hover:bg-[#F1F5F9]'
                                     }`}
                             >
                                 <Icon
                                     name={option.icon}
                                     size={16}
-                                    className={option.value === value ? 'text-primary' : 'text-text-secondary'}
+                                    className={option.value === value ? 'text-[#2563EB]' : 'text-text-secondary'}
                                 />
                                 <span className="flex-1">{option.label}</span>
                                 {option.value === value && (
-                                    <Icon name="Check" size={16} className="text-primary" />
+                                    <Icon name="Check" size={16} className="text-[#2563EB]" />
                                 )}
                             </button>
                         ))}

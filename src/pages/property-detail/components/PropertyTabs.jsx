@@ -23,12 +23,12 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
                     <h3 className="text-lg font-semibold text-text-primary mb-4">Price History</h3>
                     <div className="space-y-3">
                         {property.propertyHistory.map((event, index) => (
-                            <div key={index} className="flex items-center justify-between py-2 border-b border-border last:border-b-0">
+                            <div key={index} className="flex items-center justify-between py-2 border-b border-[#E2E8F0] last:border-b-0">
                                 <div>
                                     <p className="font-medium text-text-primary">{event.event}</p>
                                     <p className="text-sm text-text-secondary">{event.date}</p>
                                 </div>
-                                <p className="font-semibold text-primary">
+                                <p className="font-semibold text-[#2563EB]">
                                     {new Intl.NumberFormat('en-US', {
                                         style: 'currency',
                                         currency: 'USD',
@@ -48,8 +48,8 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {property?.amenities?.map((amenity, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-3 bg-background rounded-md">
-                        <Icon name="Check" size={16} className="text-success flex-shrink-0" />
+                    <div key={index} className="flex items-center space-x-3 p-3 bg-[#FAFAFA] rounded-md">
+                        <Icon name="Check" size={16} className="text-[#059669] flex-shrink-0" />
                         <span className="text-text-primary">{amenity}</span>
                     </div>
                 ))}
@@ -57,7 +57,7 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
 
             {(!property?.amenities || property.amenities.length === 0) && (
                 <div className="text-center py-8">
-                    <Icon name="Star" size={48} className="text-secondary mx-auto mb-4" />
+                    <Icon name="Star" size={48} className="text-[#64748B] mx-auto mb-4" />
                     <p className="text-text-secondary">No amenities listed for this property</p>
                 </div>
             )}
@@ -69,8 +69,8 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
             {/* Neighborhood Scores */}
             {property?.neighborhood && (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="text-center p-4 bg-background rounded-md">
-                        <div className="text-2xl font-bold text-primary mb-1">
+                    <div className="text-center p-4 bg-[#FAFAFA] rounded-md">
+                        <div className="text-2xl font-bold text-[#2563EB] mb-1">
                             {property.neighborhood.walkScore}
                         </div>
                         <div className="text-sm text-text-secondary">Walk Score</div>
@@ -81,8 +81,8 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
                         </div>
                     </div>
 
-                    <div className="text-center p-4 bg-background rounded-md">
-                        <div className="text-2xl font-bold text-accent mb-1">
+                    <div className="text-center p-4 bg-[#FAFAFA] rounded-md">
+                        <div className="text-2xl font-bold text-[#0EA5E9] mb-1">
                             {property.neighborhood.transitScore}
                         </div>
                         <div className="text-sm text-text-secondary">Transit Score</div>
@@ -93,8 +93,8 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
                         </div>
                     </div>
 
-                    <div className="text-center p-4 bg-background rounded-md">
-                        <div className="text-2xl font-bold text-warning mb-1">
+                    <div className="text-center p-4 bg-[#FAFAFA] rounded-md">
+                        <div className="text-2xl font-bold text-[#D97706] mb-1">
                             {property.neighborhood.bikeScore}
                         </div>
                         <div className="text-sm text-text-secondary">Bike Score</div>
@@ -108,9 +108,9 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
             )}
 
             {/* Map Placeholder */}
-            <div className="bg-secondary-100 rounded-lg h-64 md:h-80 flex items-center justify-center">
+            <div className="bg-[#F1F5F9] rounded-lg h-64 md:h-80 flex items-center justify-center">
                 <div className="text-center">
-                    <Icon name="Map" size={48} className="text-secondary mx-auto mb-2" />
+                    <Icon name="Map" size={48} className="text-[#64748B] mx-auto mb-2" />
                     <p className="text-text-secondary">Interactive neighborhood map would be embedded here</p>
                     <p className="text-sm text-text-secondary mt-1">
                         Coordinates: {property?.coordinates?.lat}, {property?.coordinates?.lng}
@@ -124,7 +124,7 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
                     <h3 className="text-lg font-semibold text-text-primary mb-4">Nearby Places</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {property.neighborhood.nearbyPlaces.map((place, index) => (
-                            <div key={index} className="flex items-center justify-between p-3 bg-background rounded-md">
+                            <div key={index} className="flex items-center justify-between p-3 bg-[#FAFAFA] rounded-md">
                                 <div className="flex items-center space-x-3">
                                     <Icon
                                         name={
@@ -134,14 +134,14 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
                                                         place.type === 'Grocery' ? 'ShoppingCart' : 'MapPin'
                                         }
                                         size={16}
-                                        className="text-primary"
+                                        className="text-[#2563EB]"
                                     />
                                     <div>
                                         <p className="font-medium text-text-primary">{place.name}</p>
                                         <p className="text-sm text-text-secondary">{place.type}</p>
                                     </div>
                                 </div>
-                                <span className="text-sm font-medium text-primary">{place.distance}</span>
+                                <span className="text-sm font-medium text-[#2563EB]">{place.distance}</span>
                             </div>
                         ))}
                     </div>
@@ -155,7 +155,7 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
             {property?.schools && property.schools.length > 0 ? (
                 <div className="space-y-4">
                     {property.schools.map((school, index) => (
-                        <div key={index} className="p-4 bg-background rounded-md">
+                        <div key={index} className="p-4 bg-[#FAFAFA] rounded-md">
                             <div className="flex items-center justify-between mb-2">
                                 <div>
                                     <h3 className="font-semibold text-text-primary">{school.name}</h3>
@@ -163,14 +163,14 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
                                 </div>
                                 <div className="text-right">
                                     <div className="flex items-center space-x-1">
-                                        <span className="text-lg font-bold text-primary">{school.rating}</span>
+                                        <span className="text-lg font-bold text-[#2563EB]">{school.rating}</span>
                                         <span className="text-sm text-text-secondary">/10</span>
                                     </div>
                                     <div className="flex items-center space-x-1">
                                         {[...Array(10)].map((_, i) => (
                                             <div
                                                 key={i}
-                                                className={`w-2 h-2 rounded-full ${i < school.rating ? 'bg-primary' : 'bg-secondary-200'
+                                                className={`w-2 h-2 rounded-full ${i < school.rating ? 'bg-[#2563EB]' : 'bg-[#E2E8F0]'
                                                     }`}
                                             />
                                         ))}
@@ -186,7 +186,7 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
                 </div>
             ) : (
                 <div className="text-center py-8">
-                    <Icon name="GraduationCap" size={48} className="text-secondary mx-auto mb-4" />
+                    <Icon name="GraduationCap" size={48} className="text-[#64748B] mx-auto mb-4" />
                     <p className="text-text-secondary">No school information available</p>
                 </div>
             )}
@@ -209,16 +209,16 @@ const PropertyTabs = ({ property, activeTab, onTabChange }) => {
     };
 
     return (
-        <div className="card overflow-hidden">
+        <div className="card overflow-hidden border-[#E2E8F0]">
             {/* Tab Navigation */}
-            <div className="border-b border-border">
+            <div className="border-b border-[#E2E8F0]">
                 <div className="flex overflow-x-auto no-scrollbar">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}
                             onClick={() => onTabChange(tab.id)}
                             className={`flex items-center space-x-2 px-6 py-4 text-sm font-medium transition-all duration-200 whitespace-nowrap ${activeTab === tab.id
-                                ? 'text-primary border-b-2 border-primary bg-primary-50' : 'text-text-secondary hover:text-text-primary hover:bg-secondary-100'
+                                ? 'text-[#2563EB] border-b-2 border-[#2563EB] bg-[#EFF6FF]' : 'text-text-secondary hover:text-text-primary hover:bg-[#F1F5F9]'
                                 }`}
                         >
                             <Icon name={tab.icon} size={16} />

@@ -355,7 +355,7 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
 
             <main className="pt-16 lg:pt-18">
                 {/* Breadcrumb */}
-                <div className="bg-surface border-b border-border">
+                <div className="bg-[#FFFFFF] border-b border-[#E2E8F0]">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                         <nav className="flex items-center space-x-2 text-sm">
                             {getBreadcrumbs().map((crumb, index) => (
@@ -380,7 +380,7 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
                 </div>
 
                 {/* Search Results Header */}
-                <div className="bg-surface border-b border-border">
+                <div className="bg-[#FFFFFF] border-b border-[#E2E8F0]">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                             <div>
@@ -394,10 +394,10 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
 
                             <div className="flex items-center space-x-3">
                                 {/* View Toggle (Mobile) */}
-                                <div className="flex lg:hidden bg-secondary-100 rounded-md p-1">
+                                <div className="flex lg:hidden bg-[#F1F5F9] rounded-md p-1">
                                     <button
                                         onClick={() => setViewMode('list')}
-                                        className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${viewMode === 'list' ? 'bg-surface text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary'
+                                        className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${viewMode === 'list' ? 'bg-[#FFFFFF] text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary'
                                             }`}
                                     >
                                         <Icon name="List" size={16} className="inline mr-1" />
@@ -405,7 +405,7 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
                                     </button>
                                     <button
                                         onClick={() => setViewMode('map')}
-                                        className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${viewMode === 'map' ? 'bg-surface text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary'
+                                        className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${viewMode === 'map' ? 'bg-[#FFFFFF] text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary'
                                             }`}
                                     >
                                         <Icon name="Map" size={16} className="inline mr-1" />
@@ -419,7 +419,7 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
                                 {/* Filter Toggle */}
                                 <button
                                     onClick={() => setIsFilterOpen(!isFilterOpen)}
-                                    className="flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-700 transition-all duration-200 ease-out micro-interaction"
+                                    className="flex items-center space-x-2 px-4 py-2 bg-[#2563EB] text-white rounded-md hover:bg-[#1D4ED8] transition-all duration-200 ease-out micro-interaction"
                                 >
                                     <Icon name="SlidersHorizontal" size={16} />
                                     <span className="hidden sm:inline">Filters</span>
@@ -461,15 +461,15 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
                                                     <div key={index} className="card p-4">
                                                         <div className="animate-pulse">
                                                             <div className="flex space-x-4">
-                                                                <div className="w-48 h-32 bg-secondary-200 rounded-md"></div>
+                                                                <div className="w-48 h-32 bg-[#E2E8F0] rounded-md"></div>
                                                                 <div className="flex-1 space-y-3">
-                                                                    <div className="h-4 bg-secondary-200 rounded w-3/4"></div>
-                                                                    <div className="h-3 bg-secondary-200 rounded w-1/2"></div>
-                                                                    <div className="h-3 bg-secondary-200 rounded w-2/3"></div>
+                                                                    <div className="h-4 bg-[#E2E8F0] rounded w-3/4"></div>
+                                                                    <div className="h-3 bg-[#E2E8F0] rounded w-1/2"></div>
+                                                                    <div className="h-3 bg-[#E2E8F0] rounded w-2/3"></div>
                                                                     <div className="flex space-x-2">
-                                                                        <div className="h-3 bg-secondary-200 rounded w-16"></div>
-                                                                        <div className="h-3 bg-secondary-200 rounded w-16"></div>
-                                                                        <div className="h-3 bg-secondary-200 rounded w-16"></div>
+                                                                        <div className="h-3 bg-[#E2E8F0] rounded w-16"></div>
+                                                                        <div className="h-3 bg-[#E2E8F0] rounded w-16"></div>
+                                                                        <div className="h-3 bg-[#E2E8F0] rounded w-16"></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -497,7 +497,7 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
 
                                                 {filteredProperties.length === 0 && (
                                                     <div className="text-center py-12">
-                                                        <Icon name="Search" size={48} className="text-secondary mx-auto mb-4" />
+                                                        <Icon name="Search" size={48} className="text-[#64748B] mx-auto mb-4" />
                                                         <h3 className="text-lg font-semibold text-text-primary mb-2">
                                                             No properties found
                                                         </h3>
@@ -512,7 +512,7 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
                                 </div>
 
                                 {/* Map View */}
-                                <div className="w-2/5 border-l border-border">
+                                <div className="w-2/5 border-l border-[#E2E8F0]">
                                     <MapView
                                         properties={filteredProperties}
                                         selectedProperty={selectedProperty}
@@ -530,11 +530,11 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
                                                 {[...Array(6)].map((_, index) => (
                                                     <div key={index} className="card p-4">
                                                         <div className="animate-pulse">
-                                                            <div className="w-full h-48 bg-secondary-200 rounded-md mb-4"></div>
+                                                            <div className="w-full h-48 bg-[#E2E8F0] rounded-md mb-4"></div>
                                                             <div className="space-y-3">
-                                                                <div className="h-4 bg-secondary-200 rounded w-3/4"></div>
-                                                                <div className="h-3 bg-secondary-200 rounded w-1/2"></div>
-                                                                <div className="h-3 bg-secondary-200 rounded w-2/3"></div>
+                                                                <div className="h-4 bg-[#E2E8F0] rounded w-3/4"></div>
+                                                                <div className="h-3 bg-[#E2E8F0] rounded w-1/2"></div>
+                                                                <div className="h-3 bg-[#E2E8F0] rounded w-2/3"></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -557,7 +557,7 @@ The wraparound terrace offers stunning views of Central Park and the Manhattan s
 
                                                 {filteredProperties.length === 0 && (
                                                     <div className="text-center py-12">
-                                                        <Icon name="Search" size={48} className="text-secondary mx-auto mb-4" />
+                                                            <Icon name="Search" size={48} className="text-[#64748B] mx-auto mb-4" />
                                                         <h3 className="text-lg font-semibold text-text-primary mb-2">
                                                             No properties found
                                                         </h3>
